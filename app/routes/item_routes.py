@@ -13,3 +13,7 @@ async def root():
 @router.get("/items", response_model=List[Item])
 async def get_items():
     return controller.get_items()
+    
+@router.get("/items/{item_id}", response_model=Item)
+async def get_item_by_id(item_id: int):
+    return controller.get_item_by_id(item_id)
